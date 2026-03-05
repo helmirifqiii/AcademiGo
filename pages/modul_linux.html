@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lab TKJ - Terminal Linux Interaktif | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style_linux.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Linux Lab</div>
+        <div class="nav-right-wrapper">
+            <div id="theme-toggle" class="icon-btn-linux">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="mission-box">
+            <h3>🎯 Tantangan:</h3>
+            <p id="mission-text">Buatlah folder bernama <b>'Data_Siswa'</b> di direktori home!</p>
+        </div>
+
+        <div id="terminal">
+            <div class="terminal-header">
+                <div class="buttons">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+                <div class="title">admin@academi-go: ~</div>
+            </div>
+            <div id="terminal-body" onclick="focusInput()">
+                <div id="output">
+                    <div class="line">Selamat datang di Terminal AcademiGo. Ketik 'help' untuk bantuan.</div>
+                </div>
+                <div class="input-line">
+                    <span class="prompt">admin@academi-go:~$</span>
+                    <input type="text" id="command-input" autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/script_linux.js"></script>
+</body>
+</html>

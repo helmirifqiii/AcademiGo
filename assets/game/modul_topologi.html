@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab TKJ - Simulasi Topologi Jaringan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_topologi.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Lab TKJ Digital</div>
+        <nav><a href="praktikum.html" class="btn-back">Kembali</a></nav>
+    </header>
+
+    <main class="container">
+        <div id="game-wrapper">
+            <header class="game-header">
+                <h1>🌐 Perancangan Topologi Jaringan</h1>
+                <p>Rancang infrastruktur jaringan gedung dengan menarik perangkat ke area kerja.</p>
+            </header>
+
+            <div class="topology-layout">
+                <aside id="toolbox">
+                    <h3>Pilihan Perangkat</h3>
+                    <div class="device-list">
+                        <div class="device-item" draggable="true" id="router" data-type="Router">
+                            <span class="icon">🌐</span> Router
+                        </div>
+                        <div class="device-item" draggable="true" id="switch" data-type="Switch">
+                            <span class="icon">📟</span> Switch
+                        </div>
+                        <div class="device-item" draggable="true" id="server" data-type="Server">
+                            <span class="icon">🖥️</span> Server
+                        </div>
+                        <div class="device-item" draggable="true" id="pc" data-type="PC">
+                            <span class="icon">💻</span> Client PC
+                        </div>
+                    </div>
+                </aside>
+
+                <section id="canvas-wrapper">
+                    <div id="canvas-area">
+                        <div class="canvas-hint">Tarik perangkat ke sini untuk mulai merancang</div>
+                    </div>
+                    <div class="controls">
+                        <button id="reset-btn" onclick="resetCanvas()">Hapus Semua</button>
+                        <button id="check-btn" onclick="checkTopology()">Cek Koneksi</button>
+                    </div>
+                </section>
+            </div>
+            
+            <div id="status-message"></div>
+        </div>
+    </main>
+
+    <script src="script_topologi.js"></script>
+</body>
+</html>

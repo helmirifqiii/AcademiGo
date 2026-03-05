@@ -1,0 +1,115 @@
+:root {
+    --deep-navy: #0F2854;
+    --royal-blue: #1C4D8D;
+    --terminal-bg: #0d0d0d;
+    --text-green: #00ff41;
+    --danger: #ff4b2b;
+    --bg-body: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-main: #0F2854;
+}
+
+body.dark-mode {
+    --bg-body: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --deep-navy: #0F2854;
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: var(--bg-body); 
+    margin: 0; 
+    color: var(--text-main); 
+    transition: 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Navbar Setup - Sinkron dengan image_7dd8be */
+.navbar { 
+    background: var(--deep-navy); 
+    padding: 12px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    color: white;
+    position: sticky; top: 0; z-index: 2000;
+}
+
+.nav-right-wrapper { display: flex; align-items: center; gap: 15px; }
+
+.icon-btn-cyber { 
+    cursor: pointer !important; font-size: 1.2rem; 
+    color: #ffffff !important; display: flex; 
+    align-items: center; transition: 0.2s; pointer-events: auto;
+}
+
+body.dark-mode .icon-btn-cyber { color: #fbbf24 !important; }
+
+.nav-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.3); }
+
+.btn-back { 
+    color: #ffffff !important; text-decoration: none !important; 
+    font-weight: 600; font-size: 0.95rem; 
+}
+.btn-back:visited { color: #ffffff !important; }
+
+.container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: grid; gap: 20px; }
+
+/* Mission Panel */
+.mission-panel { 
+    background: var(--card-bg); padding: 25px; 
+    border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    border-left: 8px solid var(--royal-blue); 
+}
+.level-indicator { font-weight: 700; color: var(--royal-blue); text-transform: uppercase; letter-spacing: 1px; }
+.materi-box { background: rgba(28, 77, 141, 0.1); padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 0.85rem; border: 1px dashed var(--royal-blue); color: var(--text-main); }
+.stats { display: flex; justify-content: space-between; margin-top: 15px; font-size: 0.9rem; }
+
+/* Terminal Grid - Responsive Setup */
+.terminal-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; /* Tumpuk di HP */
+    gap: 20px; 
+    min-height: 500px; 
+}
+
+@media (min-width: 992px) {
+    .terminal-grid { grid-template-columns: 1fr 1fr; height: 500px; }
+}
+
+.panel-label { background: #333; color: #aaa; padding: 8px 15px; font-size: 11px; font-weight: bold; border-radius: 8px 8px 0 0; }
+
+.monitor, .terminal { 
+    background: var(--terminal-bg); border-radius: 12px; 
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#traffic-log, #output { 
+    flex-grow: 1; padding: 15px; 
+    font-family: 'Fira Code', monospace; 
+    font-size: 12px; overflow-y: auto; color: var(--text-green); 
+    height: 250px; /* Tinggi fix agar tidak meluber */
+}
+
+.input-line { padding: 12px 15px; background: #1a1a1a; display: flex; gap: 10px; border-radius: 0 0 8px 8px; }
+.prompt { color: var(--royal-blue); font-weight: bold; white-space: nowrap; }
+
+input { 
+    background: transparent; border: none; 
+    color: white; outline: none; width: 100%; 
+    font-family: 'Fira Code', monospace; font-size: 13px;
+}
+
+.log-entry { margin-bottom: 6px; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; line-height: 1.4; word-break: break-all; }
+.danger-log { color: var(--danger); font-weight: bold; animation: blink 1s infinite; }
+
+@keyframes blink { 50% { opacity: 0.5; } }
+
+@media (max-width: 600px) {
+    .logo { font-size: 0.85rem; }
+    #case-title { font-size: 1.1rem; }
+}

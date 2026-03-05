@@ -1,0 +1,140 @@
+:root {
+    /* Tema Terang (Default) */
+    --bg-main: #f4f7fa;
+    --card-bg: white;
+    --deep-navy: #0F2854;
+    --royal-blue: #2563eb;
+    --ice-blue: rgba(37, 99, 235, 0.1);
+    --text-main: #0F2854;
+    --text-muted: #64748b;
+    --input-border: #e2e8f0;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tema Gelap */
+body.dark-mode {
+    --bg-main: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --input-border: #334155;
+    --ice-blue: rgba(96, 165, 250, 0.2);
+}
+
+* { box-sizing: border-box; transition: var(--transition); }
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: var(--bg-main); 
+    margin: 0; 
+    color: var(--text-main);
+}
+
+/* Header & Navigasi */
+.navbar { 
+    background: var(--deep-navy); 
+    padding: 10px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    color: white; 
+    z-index: 1000;
+}
+
+.nav-icons-cabling {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn-cabling {
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: #f1f5f9 !important; /* Memastikan ikon bulan terlihat putih terang */
+}
+
+body.dark-mode .icon-btn-cabling {
+    color: #fbbf24 !important; /* Ikon matahari jadi kuning cerah */
+}
+
+.divider-cabling {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-back { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+/* Container Responsif */
+.container { 
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 0 15px; 
+}
+
+#game-wrapper { 
+    background: var(--card-bg); 
+    padding: 30px 20px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    text-align: center; 
+}
+
+/* Input Section */
+.ip-input-group { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    margin: 20px 0; 
+}
+
+input { 
+    padding: 12px; 
+    border: 2px solid var(--input-border); 
+    border-radius: 10px; 
+    font-size: 1rem; 
+    background: var(--card-bg);
+    color: var(--text-main);
+    width: 100%;
+}
+
+#ip-addr { max-width: 200px; }
+#cidr { max-width: 70px; }
+
+#calc-btn { 
+    background: var(--royal-blue); 
+    color: white; 
+    border: none; 
+    padding: 14px 40px; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-weight: 600;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Grid Hasil Perhitungan */
+.result-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; /* 1 Kolom untuk HP */
+    gap: 12px; 
+    margin-top: 20px; 
+}
+
+.res-item { 
+    background: var(--bg-main); 
+    padding: 15px; 
+    border-radius: 12px; 
+    border-left: 4px solid var(--royal-blue); 
+    text-align: left;
+}
+
+.res-item strong { word-break: break-all; } /* Mencegah teks terpotong di HP */
+
+/* Layout Laptop */
+@media (min-width: 600px) {
+    .result-grid { grid-template-columns: 1fr 1fr; }
+    .container { margin: 40px auto; }
+}

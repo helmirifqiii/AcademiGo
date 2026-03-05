@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AcademiGo | Cyber Security Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style_cyber.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Cyber Security</div>
+        <div class="nav-right-wrapper">
+            <div id="theme-toggle" class="icon-btn-cyber">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="mission-panel">
+            <div class="level-indicator" id="level-title">Level 1: Dasar Firewall</div>
+            <div class="mission-card">
+                <h3 id="case-title">Memuat Misi...</h3>
+                <p id="case-desc">Silakan tunggu...</p>
+                <div class="materi-box" id="materi-text"></div>
+            </div>
+            <div class="stats">
+                <span>Progres: <strong id="progress">0/20</strong></span>
+                <span class="status-badge">Status: <strong id="system-status">NORMAL</strong></span>
+            </div>
+        </div>
+
+        <div class="terminal-grid">
+            <div class="monitor">
+                <div class="panel-label">Live Traffic Monitor</div>
+                <div id="traffic-log"></div>
+            </div>
+
+            <div class="terminal">
+                <div class="panel-label">Firewall Terminal</div>
+                <div id="output"></div>
+                <div class="input-line" onclick="focusInput()">
+                    <span class="prompt">admin@firewall:#</span>
+                    <input type="text" id="cmd-input" autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/script_cyber.js"></script>
+</body>
+</html>

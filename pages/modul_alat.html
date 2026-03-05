@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Alat & Teori Crimping | AcademiGo</title>
+    <link rel="stylesheet" href="/css/style_alat.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Pengenalan Crimping</div>
+        <div class="nav-right-wrapper">
+            <div id="theme-toggle" class="icon-btn-cyber">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="module-header" data-aos="fade-up">
+            <h1><i class="fas fa-tools"></i> Pengenalan Alat & Bahan</h1>
+            <p>Sentuh atau arahkan kursor pada alat untuk melihat fungsinya.</p>
+        </section>
+
+        <div class="lab-wrapper">
+            <div class="tools-grid" data-aos="fade-right">
+                <div class="tool-card" data-tool="crimping">
+                    <img src="/assets/gambar/tang.png" alt="Tang Crimping">
+                    <span>Tang Crimping</span>
+                </div>
+                <div class="tool-card" data-tool="lan-tester">
+                    <img src="/assets/gambar/lantester.png" alt="LAN Tester">
+                    <span>LAN Tester</span>
+                </div>
+                <div class="tool-card" data-tool="rj45">
+                    <img src="/assets/gambar/konektor.png" alt="Konektor RJ45">
+                    <span>Konektor RJ45</span>
+                </div>
+                <div class="tool-card" data-tool="utp">
+                    <img src="/assets/gambar/lan.png" alt="Kabel UTP">
+                    <span>Kabel UTP</span>
+                </div>
+            </div>
+
+            <div class="info-panel glass" id="info-panel" data-aos="fade-left">
+                <div class="info-placeholder">
+                    <i class="fas fa-mouse-pointer animate-bounce"></i>
+                    <p>Pilih alat untuk melihat detail</p>
+                </div>
+                <div id="info-content" class="hidden">
+                    <h2 id="tool-name">Nama Alat</h2>
+                    <hr>
+                    <p id="tool-desc">Deskripsi.</p>
+                    <div class="context-box">
+                        <strong><i class="fas fa-lightbulb"></i> Tips Kontekstual:</strong>
+                        <p id="tool-tip">Tips penggunaan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="theory-section" data-aos="fade-up">
+            <div class="section-title">
+                <i class="fas fa-network-wired"></i>
+                <h2>Standar Urutan Warna</h2>
+            </div>
+            <p>Pahami perbedaan standar warna sebelum melakukan penyambungan.</p>
+            
+            
+            <div class="standards-grid">
+                <div class="standard-card glass">
+                    <h3>T568B (Paling Umum)</h3>
+                    <div class="visual-cable-container">
+                        <div class="cable-pin po">1</div><div class="cable-pin o">2</div>
+                        <div class="cable-pin ph">3</div><div class="cable-pin b">4</div>
+                        <div class="cable-pin pb">5</div><div class="cable-pin h">6</div>
+                        <div class="cable-pin pc">7</div><div class="cable-pin c">8</div>
+                    </div>
+                    <ul class="color-text-list">
+                        <li><span class="dot po"></span> 1. Putih Oranye</li>
+                        <li><span class="dot o"></span> 2. Oranye</li>
+                        <li><span class="dot ph"></span> 3. Putih Hijau</li>
+                        <li><span class="dot b"></span> 4. Biru</li>
+                        <li><span class="dot pb"></span> 5. Putih Biru</li>
+                        <li><span class="dot h"></span> 6. Hijau</li>
+                        <li><span class="dot pc"></span> 7. Putih Cokelat</li>
+                        <li><span class="dot c"></span> 8. Cokelat</li>
+                    </ul>
+                </div>
+
+                <div class="standard-card glass">
+                    <h3>T568A</h3>
+                    <div class="visual-cable-container">
+                        <div class="cable-pin ph">1</div><div class="cable-pin h">2</div>
+                        <div class="cable-pin po">3</div><div class="cable-pin b">4</div>
+                        <div class="cable-pin pb">5</div><div class="cable-pin o">6</div>
+                        <div class="cable-pin pc">7</div><div class="cable-pin c">8</div>
+                    </div>
+                    <ul class="color-text-list">
+                        <li><span class="dot ph"></span> 1. Putih Hijau</li>
+                        <li><span class="dot h"></span> 2. Hijau</li>
+                        <li><span class="dot po"></span> 3. Putih Oranye</li>
+                        <li><span class="dot b"></span> 4. Biru</li>
+                        <li><span class="dot pb"></span> 5. Putih Biru</li>
+                        <li><span class="dot o"></span> 6. Oranye</li>
+                        <li><span class="dot pc"></span> 7. Putih Cokelat</li>
+                        <li><span class="dot c"></span> 8. Cokelat</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="step-section" data-aos="fade-up">
+            <div class="section-title">
+                <i class="fas fa-list-ol"></i>
+                <h2>Prosedur Kerja Crimping</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card" data-aos="zoom-in">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/kupas.png" alt="Kupas Kabel">
+                        <div class="step-badge">1</div>
+                    </div>
+                    <p><strong>Kupas Kabel:</strong> Kupas kulit luar kabel UTP ± 2 cm menggunakan tang crimping.</p>
+                </div>
+                <div class="step-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/luruskan.png" alt="Uraikan Kabel">
+                        <div class="step-badge">2</div>
+                    </div>
+                    <p><strong>Urai Kabel:</strong> Lepaskan lilitan tiap pasang kabel dan luruskan satu per satu.</p>
+                </div>
+                <div class="step-card highlight-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/rapi.png" alt="Susun Warna">
+                        <div class="step-badge">3</div>
+                    </div>
+                    <p><strong>Susun Warna:</strong> Urutkan kabel sesuai standar (T568B adalah yang paling umum).</p>
+                </div>
+                <div class="step-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/potong.png" alt="Potong Kabel">
+                        <div class="step-badge">4</div>
+                    </div>
+                    <p><strong>Potong Rata:</strong> Potong ujung kabel secara lurus agar sejajar saat masuk ke RJ45.</p>
+                </div>
+                <div class="step-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/klik.png" alt="Proses Crimping">
+                        <div class="step-badge">5</div>
+                    </div>
+                    <p><strong>Crimping:</strong> Masukkan ke RJ45 dan tekan tang hingga berbunyi 'klik'.</p>
+                </div>
+                <div class="step-card success-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="step-img-box">
+                        <img src="/assets/gambar/cek.png" alt="Pengujian LAN Tester">
+                        <div class="step-badge"><i class="fas fa-check"></i></div>
+                    </div>
+                    <p><strong>Pengujian:</strong> Gunakan LAN Tester untuk memastikan semua pin terkoneksi sempurna.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script_alat.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademiCee | AI Assistant Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style_ai.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiCee - AI Integration</div>
+        <nav><a href="praktikum.html" class="btn-back">Kembali</a></nav>
+    </header>
+
+    <main class="container">
+        <div class="info-card">
+            <h2>🤖 Simulasi Asisten Praktikum AI</h2>
+            <p>Tanyakan kesulitanmu seputar Linux, Jaringan, atau Hardware pada asisten pintar kami di pojok kanan bawah.</p>
+        </div>
+
+        <div id="chat-circle" onclick="toggleChat()">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <div id="chat-box" class="chat-hidden">
+            <div class="chat-header">
+                <span>AcademiCee AI Assistant</span>
+                <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chat-content">
+                <div class="bot-msg">Halo Mr.! Ada yang bisa saya bantu terkait praktikum hari ini?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Tanyakan sesuatu (cth: cara chmod)...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script_ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+:root {
+    --deep-navy: #0F2854;
+    --terminal-bg: #1e1e1e;
+    --text-green: #00ff41;
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f4f7fa; margin: 0; }
+.navbar { background: var(--deep-navy); padding: 15px 5%; color: white; display: flex; justify-content: space-between; }
+.container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+
+.instruction-panel { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1C4D8D; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+.split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 500px; }
+.window { border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+
+/* Terminal Style */
+.terminal-window { background: var(--terminal-bg); color: #fff; font-family: 'Fira Code', monospace; }
+.window-header { background: #333; padding: 10px; font-size: 12px; text-align: center; }
+#terminal-body { padding: 15px; flex-grow: 1; overflow-y: auto; }
+.input-line { display: flex; gap: 10px; }
+.prompt { color: var(--text-green); font-weight: bold; }
+input { background: transparent; border: none; color: white; outline: none; width: 100%; font-family: 'Fira Code'; }
+
+/* Browser Style */
+.browser-window { background: #fff; border: 1px solid #ddd; }
+.browser-header { background: #e0e0e0; padding: 10px; display: flex; justify-content: center; }
+.browser-bar { background: #fff; width: 90%; border-radius: 5px; padding: 2px 10px; font-size: 12px; color: #666; }
+#browser-content { flex-grow: 1; padding: 20px; }
+.placeholder-text { color: #aaa; text-align: center; margin-top: 100px; font-style: italic; }

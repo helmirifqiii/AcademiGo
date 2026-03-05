@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lab TKJ - Detektif Hardware | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style_trouble.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Detektif Hardware</div>
+        <div class="nav-right-wrapper">
+            <div id="theme-toggle" class="icon-btn-lab">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="game-wrapper">
+            <header class="game-header">
+                <h1>🔧 Detektif Hardware</h1>
+                <p>Identifikasi masalah dan pilih solusi perbaikan yang tepat!</p>
+            </header>
+
+            <div class="case-card">
+                <div id="timer-container">
+                    <span id="timer-text">⏳ Waktu: 15s</span>
+                </div>
+                
+                <div id="case-display">
+                    <div class="case-icon">📟</div>
+                    <h2 id="case-title">Menyiapkan Kasus...</h2>
+                    <p id="case-description">Mohon tunggu...</p>
+                </div>
+
+                <div id="option-container" class="options-grid"></div>
+
+                <div id="feedback" class="feedback-hidden">
+                    <p id="feedback-text"></p>
+                    <button id="next-btn" class="btn-main" onclick="nextCase()" style="display:none;">Kasus Selanjutnya</button>
+                </div>
+            </div>
+            
+            <div class="score-board">
+                <span>Skor: <strong id="current-score">0</strong></span>
+                <span class="divider-score">|</span>
+                <span>Nyawa: <strong id="lives">3</strong></span>
+            </div>
+        </div>
+    </main>
+    <script src="/js/script_trouble.js"></script>
+</body>
+</html>

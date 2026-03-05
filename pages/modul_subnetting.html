@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lab TKJ - Simulasi Subnetting | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style_subnet.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Subnetting</div>
+        <nav class="nav-icons-cabling">
+            <div id="theme-toggle" class="icon-btn-cabling">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="divider-cabling"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="game-wrapper">
+            <header class="game-header">
+                <h1>🔢 Simulasi Subnetting</h1>
+                <p>Latih perhitungan IP, Subnet Mask, dan Range Host secara virtual.</p>
+            </header>
+
+            <div class="subnet-card">
+                <div class="input-section">
+                    <label>Masukkan IP Address & CIDR:</label>
+                    <div class="ip-input-group">
+                        <input type="text" id="ip-addr" placeholder="192.168.1.1">
+                        <span class="slash">/</span>
+                        <input type="number" id="cidr" min="1" max="32" value="24">
+                    </div>
+                    <button id="calc-btn" onclick="calculateSubnet()">Hitung Subnet</button>
+                </div>
+
+                <div id="result-area" class="result-hidden">
+                    <h3>Hasil Perhitungan:</h3>
+                    <div class="result-grid">
+                        <div class="res-item">
+                            <small>Subnet Mask</small>
+                            <strong id="res-mask">-</strong>
+                        </div>
+                        <div class="res-item">
+                            <small>Network Address</small>
+                            <strong id="res-net">-</strong>
+                        </div>
+                        <div class="res-item">
+                            <small>First Host</small>
+                            <strong id="res-first">-</strong>
+                        </div>
+                        <div class="res-item">
+                            <small>Last Host</small>
+                            <strong id="res-last">-</strong>
+                        </div>
+                        <div class="res-item">
+                            <small>Broadcast Address</small>
+                            <strong id="res-broad">-</strong>
+                        </div>
+                        <div class="res-item">
+                            <small>Total Usable Hosts</small>
+                            <strong id="res-total">-</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/script_subnet.js"></script>
+</body>
+</html>

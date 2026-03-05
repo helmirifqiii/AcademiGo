@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademiCee | Simulasi Konfigurasi Web Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_webserver.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiCee - Web Server Lab</div>
+        <nav><a href="praktikum.html" class="btn-back">Kembali</a></nav>
+    </header>
+
+    <main class="container">
+        <div class="instruction-panel">
+            <h3>🛠️ Misi ASJ:</h3>
+            <p id="mission-text">Instal server dengan mengetik <code>apt install apache2</code>, lalu ubah tampilan <code>index.html</code>!</p>
+        </div>
+
+        <div class="split-view">
+            <div class="window terminal-window">
+                <div class="window-header">root@server-virtual: ~</div>
+                <div id="terminal-body">
+                    <div id="output">Selamat datang di Terminal Server.</div>
+                    <div class="input-line">
+                        <span class="prompt">#</span>
+                        <input type="text" id="cmd-input" autofocus autocomplete="off">
+                    </div>
+                </div>
+            </div>
+
+            <div class="window browser-window">
+                <div class="browser-header">
+                    <div class="browser-bar">http://localhost/index.html</div>
+                </div>
+                <div id="browser-content">
+                    <div class="placeholder-text">Server belum berjalan...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script_webserver.js"></script>
+</body>
+</html>

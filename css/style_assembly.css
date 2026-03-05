@@ -1,0 +1,59 @@
+:root {
+    --deep-navy: #0F2854;
+    --royal-blue: #1C4D8D;
+    --ice-blue: #BDE8F5;
+    --success: #27ae60;
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f4f7fa; margin: 0; }
+.navbar { background: var(--deep-navy); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white; }
+.btn-back { color: white; text-decoration: none; font-weight: 600; }
+
+.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+#game-wrapper { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+
+.assembly-area { display: flex; gap: 30px; margin-top: 30px; justify-content: center; align-items: flex-start; }
+
+/* Motherboard Layout */
+#motherboard {
+    width: 500px;
+    height: 500px;
+    background: #2d3436; /* Warna PCB Motherboard */
+    border-radius: 15px;
+    position: relative;
+    border: 5px solid #636e72;
+}
+
+.drop-zone {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed var(--ice-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* Posisi Slot Komponen */
+#socket-cpu { width: 80px; height: 80px; top: 100px; left: 180px; }
+#slot-ram { width: 30px; height: 150px; top: 80px; left: 320px; }
+#slot-gpu { width: 250px; height: 40px; top: 300px; left: 50px; }
+#slot-psu { width: 150px; height: 100px; bottom: 20px; right: 20px; }
+
+/* Gudang */
+#gudang-komponen { width: 300px; background: var(--bg-light); padding: 20px; border-radius: 15px; border: 1px solid #ddd; }
+.component {
+    background: var(--white);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: grab;
+    border: 2px solid var(--royal-blue);
+    font-weight: 600;
+}
+
+.component.installed { background: var(--success); color: white; cursor: default; }
+#status-msg { margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: var(--royal-blue); }
+#reset-btn { margin-top: 20px; padding: 10px 20px; border-radius: 50px; border: none; background: #e74c3c; color: white; cursor: pointer; }

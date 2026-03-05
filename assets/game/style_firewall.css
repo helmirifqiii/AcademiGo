@@ -1,0 +1,26 @@
+:root {
+    --deep-navy: #0F2854;
+    --success: #27ae60;
+    --danger: #e74c3c;
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f0f2f5; margin: 0; overflow: hidden; }
+.navbar { background: var(--deep-navy); padding: 15px 5%; color: white; display: flex; justify-content: space-between; }
+.btn-back { color: white; text-decoration: none; }
+
+.container { display: flex; justify-content: center; align-items: center; height: 90vh; }
+#game-container { background: white; width: 400px; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+
+.game-info { display: flex; justify-content: space-around; font-weight: bold; font-size: 1.2rem; margin-bottom: 20px; }
+
+#play-area { height: 400px; background: #1e272e; border-radius: 15px; position: relative; overflow: hidden; margin-bottom: 20px; }
+#server-target { position: absolute; bottom: 0; width: 100%; background: #34495e; color: white; padding: 10px 0; font-size: 0.8rem; }
+
+.packet { width: 50px; height: 40px; border-radius: 5px; position: absolute; left: 50%; transform: translateX(-50%); font-size: 24px; display: flex; align-items: center; justify-content: center; transition: top 0.1s linear; }
+
+.controls { display: flex; gap: 10px; justify-content: center; }
+button { padding: 15px 25px; border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-allow { background: var(--success); }
+.btn-drop { background: var(--danger); }
+button:active { transform: scale(0.9); }
+.hint { font-size: 0.8rem; color: #666; margin-top: 15px; }

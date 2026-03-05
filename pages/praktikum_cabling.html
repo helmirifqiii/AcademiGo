@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Simulasi Crimping UTP | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style_game.css">
+    <link rel="icon" href="/assets/gambar/logotitle.png">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">AcademiGo | Crimping Lab</div>
+        <div class="nav-icons-cabling">
+            <div id="theme-toggle" class="icon-btn-cabling">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="divider-cabling"></div>
+            <a href="/praktek.html" class="btn-back">Kembali</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="game-wrapper">
+            <h1>Simulasi Crimping UTP</h1>
+            <p>Tarik 8 kabel ke Ujung 1 dan 8 kabel ke Ujung 2 sesuai standar.</p>
+
+            <div id="mode-selection">
+                <button id="mode-b" class="mode-btn active" onclick="setMode('T568B')">Straight</button>
+                <button id="mode-cross" class="mode-btn" onclick="setMode('Cross-Over')">Cross-Over</button>
+                <button class="mode-btn reset" onclick="resetGame()">Reset</button>
+            </div>
+
+            
+
+            <div id="double-target-wrapper">
+                <div class="target-section">
+                    <h3 id="label-ujung-1">UJUNG 1 (T568B)</h3>
+                    <div id="target-1" class="target-area drag-area"></div>
+                </div>
+                <div class="target-section">
+                    <h3 id="label-ujung-2">UJUNG 2 (T568B)</h3>
+                    <div id="target-2" class="target-area drag-area"></div>
+                </div>
+            </div>
+
+            <div class="source-wrapper">
+                <h3>Pilihan Kabel (Acak)</h3>
+                <div id="kabel-sumber" class="drag-area"></div>
+            </div>
+
+            <button id="check-button" onclick="testCable()">Uji Kabel (LAN Tester)</button>
+            
+            <div id="network-tester">
+                <p id="tester-status">Susun semua kabel lalu klik uji.</p>
+                <div id="tester-lights-wrapper">
+                    <div class="tester-device">
+                        <span>MASTER</span>
+                        <div class="lights-container" id="lights-master">
+                            <div class="light" id="m-1">1</div><div class="light" id="m-2">2</div><div class="light" id="m-3">3</div><div class="light" id="m-4">4</div><div class="light" id="m-5">5</div><div class="light" id="m-6">6</div><div class="light" id="m-7">7</div><div class="light" id="m-8">8</div>
+                        </div>
+                    </div>
+                    <div class="tester-device">
+                        <span>REMOTE</span>
+                        <div class="lights-container" id="lights-remote">
+                            <div class="light" id="r-1">1</div><div class="light" id="r-2">2</div><div class="light" id="r-3">3</div><div class="light" id="r-4">4</div><div class="light" id="r-5">5</div><div class="light" id="r-6">6</div><div class="light" id="r-7">7</div><div class="light" id="r-8">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="/js/script_game.js"></script>
+</body>
+</html>
