@@ -1,2 +1,18 @@
-.vercel
-.env*.local
+# Database & Kunci Rahasia
+config.js
+.env
+*.log
+
+# Folder Library (Jika nanti pakai npm/node)
+node_modules/
+dist/
+build/
+
+# File Sistem (Sampah OS)
+.DS_Store
+Thumbs.db
+
+# File IDE
+.vscode/
+.idea/
+*.sublime-project

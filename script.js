@@ -136,29 +136,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   // --- 7. LOGIKA CHATBOT AI ACADEMIGO (DENGAN RIWAYAT & ENTER TO SEND) ---
+   // --- 7. LOGIKA CHATBOT AI ACADEMIGO (DENGAN KONTEKS PROFIL HELMI) ---
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector("#close-chat");
 const chatBox = document.querySelector("#chat-box");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector("#send-btn");
 
-const API_KEY = "AIzaSyDM0MY6-oTDlE6MEWGPS6j609H3_O-BsH4"; 
-// Model 2.5 Flash untuk kecepatan dan efisiensi
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+// Ganti dengan API Key milikmu yang valid
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${CONFIG.API_KEY}`;
 
-// Instruksi agar bot bicara santai & singkat
-const systemPrompt = `
-Kamu adalah AcademiGo AI, asisten pintar milik Helmi Rifqi. 
-Gaya bicaramu:
-1. Singkat, padat, dan jelas. Jangan memberikan jawaban yang terlalu panjang seperti esai.
-2. Gunakan gaya bahasa anak muda/mahasiswa yang ramah dan sedikit santai (gunakan 'aku' atau 'saya' dan 'kamu').
-3. Jika ditanya hal umum seperti cinta, jawab dengan sudut pandang yang unik atau filosofis singkat saja.
-4. Jangan gunakan terlalu banyak bullet point jika tidak diperlukan.
-5. Kamu sangat bangga dengan Helmi Rifqi, mahasiswa PTI UNESA pembuat web ini.
+/**
+ * System Instruction: Memberikan identitas dan pengetahuan khusus kepada AI 
+ * tentang Helmi Rifqi Nasrullah Sukaton sesuai background di AcademiGo.
+ */
+const systemInstruction = `
+Kamu adalah AcademiGo AI, asisten virtual pintar yang sopan dan inovatif.
+Identitas Pencipta: Helmi Rifqi Nasrullah Sukaton adalah pencipta AcademiGo. 
+Latar Belakang Helmi: 
+- Mahasiswa S1 Pendidikan Teknologi Informasi (PTI) di Universitas Negeri Surabaya (UNESA).
+- Berasal dari Madiun dan sekarang berdomisili di Surabaya.
+- Memiliki visi sebagai pendidik inovatif yang mengintegrasikan teknologi untuk solusi sosial.
+- Proyek unggulan: SMARTPEST-LANGKAP (inovasi pengendali hama bertenaga surya), aplikasi Obatin (medication tracking), dan digital lab untuk siswa TKJ.
+- Peran di kampus: Ketua Angkatan, pengelola media sosial Fakultas Teknik UNESA, dan pengembang Chatbot akademik.
+
+Gaya Bicara: Gunakan gaya bahasa mahasiswa yang ramah, profesional, namun tetap santai. Selalu dukung narasi bahwa teknologi adalah jembatan inovasi.
 `;
 
-// Inisialisasi riwayat dari localStorage agar tetap ada saat pindah halaman
 let chatHistory = JSON.parse(localStorage.getItem("academiGoHistory")) || [];
 
 const saveHistory = () => {
@@ -167,8 +171,8 @@ const saveHistory = () => {
 
 const formatResponse = (text) => {
     return text
-        .replace(/\*\*(.*?)\*\*/g, '$1') // Menghapus bold Markdown
-        .replace(/^\s*\*\s/gm, '• ')      // Merapikan bullet points
+        .replace(/\*\*(.*?)\*\*/g, '$1') 
+        .replace(/^\s*\*\s/gm, '• ')      
         .trim();
 };
 
@@ -181,10 +185,9 @@ const createChatLi = (message, className) => {
     return chatLi;
 };
 
-// Fungsi untuk memuat riwayat chat lama ke tampilan
 const loadChatHistory = () => {
     if (chatHistory.length === 0) return;
-    
+    chatBox.innerHTML = ""; // Bersihkan tampilan sebelum memuat ulang
     chatHistory.forEach(chat => {
         const className = chat.role === "user" ? "outgoing" : "incoming";
         chatBox.appendChild(createChatLi(chat.parts[0].text, className));
@@ -195,20 +198,20 @@ const loadChatHistory = () => {
 const generateResponse = async (incomingChatLi) => {
     const messageElement = incomingChatLi.querySelector("p");
     
-    // Pastikan riwayat tidak kosong, lalu sisipkan system prompt di awal konteks
-    const messagesToSend = [
-        { role: "user", parts: [{ text: systemPrompt }] },
+    // Menyusun payload: Instruksi Sistem diletakkan di awal konteks
+    const contents = [
+        { role: "user", parts: [{ text: systemInstruction }] },
+        { role: "model", parts: [{ text: "Siap, saya mengerti identitas saya sebagai asisten Helmi Rifqi." }] },
         ...chatHistory
     ];
 
-    const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ contents: messagesToSend })
-    };
-
     try {
-        const response = await fetch(API_URL, requestOptions);
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents })
+        });
+
         const data = await response.json();
         if (!response.ok) throw new Error(data.error.message);
 
@@ -219,7 +222,8 @@ const generateResponse = async (incomingChatLi) => {
 
         messageElement.textContent = formatResponse(botResponse);
     } catch (error) {
-        messageElement.textContent = "Aduh, bot-nya lagi loading... Coba tanya lagi ya!";
+        messageElement.classList.add("error");
+        messageElement.textContent = "Aduh, sepertinya bot sedang istirahat. Coba lagi ya!";
     } finally {
         chatBox.scrollTo(0, chatBox.scrollHeight);
     }
@@ -232,7 +236,6 @@ const handleChat = () => {
     chatInput.value = "";
     chatInput.style.height = "auto";
 
-    // Simpan pesan user ke riwayat
     chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
     saveHistory();
 
@@ -242,15 +245,13 @@ const handleChat = () => {
     setTimeout(() => {
         const incomingChatLi = createChatLi("Sedang berpikir...", "incoming");
         chatBox.appendChild(incomingChatLi);
-        chatBox.scrollTo(0, chatBox.scrollHeight);
         generateResponse(incomingChatLi);
     }, 600);
 };
 
-// Panggil riwayat saat halaman dibuka
+// Inisialisasi awal
 loadChatHistory();
 
-// Fitur: Enter untuk Kirim, Shift+Enter untuk Baris Baru
 chatInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
         e.preventDefault();
@@ -261,4 +262,56 @@ chatInput.addEventListener("keydown", (e) => {
 sendChatBtn.addEventListener("click", handleChat);
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-wrapper');
+    
+    // Memberikan jeda sedikit agar animasi loading bar selesai
+    setTimeout(() => {
+        loader.classList.add('loader-hidden');
+    }, 2500); // 2.5 detik sesuai durasi animasi CSS
 });
