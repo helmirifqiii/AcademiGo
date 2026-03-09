@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab TKJ - Firewall Logic Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_firewall.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiCee - Security Lab</div>
+        <nav><a href="praktikum.html" class="btn-back">Kembali</a></nav>
+    </header>
+
+    <main class="container">
+        <div id="game-container">
+            <div class="game-info">
+                <div>Skor: <span id="score">0</span></div>
+                <div>Nyawa: <span id="lives">3</span></div>
+            </div>
+
+            <div id="play-area">
+                <div id="server-target">🖥️ SERVER UTAMA</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn-allow" onclick="handleAction('allow')">ALLOW (Aman)</button>
+                <button class="btn-drop" onclick="handleAction('drop')">DROP (Bahaya)</button>
+            </div>
+            
+            <p class="hint">Instruksi: **Hijau** = Data Aman, **Merah** = Virus/Malware</p>
+        </div>
+    </main>
+
+    <script src="script_firewall.js"></script>
+</body>
+</html>

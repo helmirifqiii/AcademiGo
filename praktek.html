@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmi Rifqi | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="gambar/logotitle.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/gambar/logotitle.png">
+</head>
+<body>
+
+<header>
+    <nav class="container navbar floating-nav">
+        <div class="logo">
+            <img src="assets/gambar/logo.png" alt="Logo" class="main-logo">
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item ">Beranda</a></li>
+                <li><a href="profil.html" class="nav-item">Profil</a></li>
+                <li><a href="projek.html" class="nav-item " >Project</a></li>
+                <li><a href="praktek.html" class="nav-item active">Praktikum</a></li>
+                <li><a href="kontak.html" class="nav-item">Kontak</a></li>
+            </ul>
+        </div>
+
+            <div class="nav-icons">
+                <a href="https://www.instagram.com/helmiiiae" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/helmi-rifqi-nasrullah-sukaton" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/helmirifqiii" target="_blank"><i class="fab fa-github"></i></a>
+                
+                <div class="divider"></div>
+
+                <div id="theme-toggle" class="icon-btn">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </div>
+
+                
+
+                <div class="menu-container"> 
+                    <div class="menu-icon" id="menu-toggle">
+                        <span></span><span></span><span></span>
+                </div>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="projek.html">Project</a></li>
+                    <li><a href="praktek.html">Praktikum</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="contact-header">
+    <div class="container">
+        <h1>Pilih Modul Praktik TKJ</h1>
+        <p>Akses simulasi interaktif di bawah ini untuk mengasah keterampilan Anda dalam jaringan dan komputer.</p>
+    </div>
+</section>
+
+    <main class="container">
+        
+        <div class="module-cards-wrapper">
+
+            <div class="module-card" onclick="window.location.href='pages/modul_alat.html'">
+                <span class="icon"><i class="fas fa-toolbox"></i></span>
+                <h3>Pengenalan Alat Crimping</h3>
+                <p>Pelajari fungsi Tang Crimping, LAN Tester, dan bahan konektor secara interaktif.</p>
+                <div class="status-badge status-ready">Siap</div>
+            </div>
+
+            <div class="module-card" onclick="window.location.href='pages/praktikum_cabling.html'">
+                <span class="icon">🔌</span>
+                <h3>Uji Kabel Jaringan</h3>
+                <p>Simulasi LAN Tester interaktif untuk menguji urutan kabel Straight dan Cross-Over.</p>
+                <div class="status-badge status-ready">Siap</div>
+            </div>
+
+            <div class="module-card" onclick="window.location.href='/pages/modul_subnetting.html'">
+                <span class="icon">🔢</span>
+                <h3>Simulasi Subnetting</h3>
+                <p>Latih perhitungan IP, Subnet Mask, dan Range Host dengan kalkulator virtual.</p>
+                <div class="status-badge status-ready">Siap</div>
+            </div>
+
+            <div class="module-card" onclick="window.location.href='/pages/modul_troubleshooting.html'">
+                <span class="icon">🔧</span>
+                <h3>Troubleshooting Dasar</h3>
+                <p>Identifikasi dan perbaiki masalah koneksi dan hardware PC umum (misal: PSU).</p>
+                <div class="status-badge status-ready">Siap</div> 
+            </div>
+
+            <div class="module-card" onclick="window.location.href='/pages/modul_linux.html'">
+                <span class="icon">💻</span>
+                <h3>Interactive Linux Terminal</h3>
+                <p>Belajar perintah dasar CLI Linux (ls, cd, mkdir, chmod) melalui tantangan interaktif.</p>
+                <div class="status-badge status-ready">Siap</div> 
+            </div>
+
+            <div class="module-card" onclick="window.location.href='/pages/modul_cybersecurity.html'">
+                <span class="icon">🛡️</span>
+                <h3>Cyber Security Lab</h3>
+                <p>Selesaikan 20 tantangan keamanan jaringan secara berurutan, dari level dasar hingga level ahli.</p>
+                <div class="status-badge status-ready">Siap</div> 
+            </div>
+
+        </div>
+    </main>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-logo">
+            <img src="assets/gambar/logo.png" alt="AcademiGo Logo">
+        </div>
+
+        <p class="footer-tagline">
+            Menjadikan teknologi sebagai jembatan untuk mengubah setiap tantangan menjadi peluang yang inovatif.
+        </p>
+
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="projek.html">Project</a></li>
+                <li><a href="praktek.html">Praktikum</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-social">
+            <a href="https://www.instagram.com/helmiiiae" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/helmi-rifqi-nasrullah-sukaton" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/helmirifqiii" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Helmi Rifqi | Dirancang dengan bangga untuk masa depan pendidikan.</p>
+        </div>
+    </div>
+</footer>
+<div id="kibo-container">
+    <div id="chat-window" style="display: none; flex-direction: column;">
+        <div id="chat-header">
+            <span><i class="fas fa-robot"></i> Kibo AI</span>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-output"></div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Tanya Kibo apa saja..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button id="chat-toggle-btn" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

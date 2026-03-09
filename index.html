@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmi Rifqi | AcademiGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/gambar/logotitle.png">
+</head>
+<body>
+<div id="loading-screen">
+    <div class="loading-content">
+        <img src="assets/gambar/logo.png" alt="AcademiGo Logo" class="loading-logo">
+        <div class="progress-container">
+            <div class="progress-bar" id="bar"></div>
+        </div>
+        <p class="loading-text">Menyiapkan Inovasi...</p>
+    </div>
+</div>
+<header>
+    <nav class="container navbar floating-nav">
+        <div class="logo">
+            <img src="assets/gambar/logo.png" alt="Logo" class="main-logo">
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Beranda</a></li>
+                <li><a href="profil.html" class="nav-item">Profil</a></li>
+                <li><a href="projek.html" class="nav-item">Project</a></li>
+                <li><a href="praktek.html" class="nav-item">Praktikum</a></li>
+                <li><a href="kontak.html" class="nav-item">Kontak</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-icons">
+            <a href="https://www.instagram.com/helmiiiae" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/helmi-rifqi-nasrullah-sukaton" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/helmirifqiii" target="_blank"><i class="fab fa-github"></i></a>
+            
+            <div class="divider"></div>
+
+            <div id="theme-toggle" class="icon-btn">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+
+            
+
+            <div class="menu-container"> 
+                <div class="menu-icon" id="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="projek.html">Project</a></li>
+                    <li><a href="praktek.html">Praktikum</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-wrapper">
+    <div class="hero container">
+        <div class="hero-text">
+            <h1>Selamat datang ! <br><span>di Blog Portofolio Helmi Rifqi</span></h1>
+            <p>Mahasiswa S1 Pendidikan Teknologi Informasi UNESA semester 4 yang berdedikasi membangun solusi digital inovatif.</p>
+            <div class="hero-action" style="position: relative; z-index: 20;">
+                <a href="profil.html" class="btn-main">Kenalan Yukk</a>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <div class="profile-blob">
+                <img src="assets/gambar/fotoprib1.png" alt="Helmi Rifqi" class="profile-img">
+            </div>
+            <div class="badge badge-cpp"><i class="fas fa-code"></i> C++</div>
+            <div class="badge badge-java"><i class="fab fa-java"></i> Java</div>
+            <div class="badge badge-firebase"><i class="fas fa-fire"></i> Firebase</div>
+            <div class="badge badge-db"><i class="fas fa-database"></i> SQL</div>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="currentColor" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+</section>
+
+<main class="container dashboard-grid">
+    <section class="dashboard-card">
+        <div class="card-header">
+            <i class="fas fa-user-graduate"></i>
+            <h2>Akademik & Organisasi</h2>
+        </div>
+        <div class="card-body">
+            <p>Mahasiswa <strong>PTI UNESA 2024</strong>. Aktif sebagai Ketua Rombongan Kuro dan pengembang inovasi <strong>SMARTPEST-LANGKAP</strong>.</p>
+            <a href="profil.html" class="link-text">Lihat CV Lengkap <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="dashboard-card">
+        <div class="card-header">
+            <i class="fas fa-laptop-code"></i>
+            <h2>Project Unggulan</h2>
+        </div>
+        <div class="recent-projects">
+            <div class="mini-project"><i class="fas fa-pills"></i> Obatin (Mobile App)</div>
+            <div class="mini-project"><i class="fas fa-utensils"></i> Kasir Restoran (Java)</div>
+            <div class="mini-project"><i class="fas fa-certificate"></i> HKI Poster Penelitian</div>
+        </div>
+        <a href="projek.html" class="link-text">Semua Portofolio <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <section class="dashboard-card">
+        <div class="card-header">
+            <i class="fas fa-flask"></i>
+            <h2>Laboratorium Virtual</h2>
+        </div>
+        <div class="lab-status">
+            <div class="status-item"><span class="dot"></span> 5 Modul Siap Digunakan</div>
+            <p>Uji kemampuanmu di <strong>Cyber Security Lab</strong> atau simulasi <strong>Konfigurasi Web Server</strong>.</p>
+            <a href="praktek.html" class="btn-dashboard">Mulai Praktikum <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+</main>
+
+<section class="stats-bar">
+    <div class="container stats-wrapper">
+        <div class="stat-item">
+            <span class="number">5+</span>
+            <span class="label">Interactive Labs</span>
+        </div>
+        <div class="stat-item">
+            <span class="number">40</span>
+            <span class="label">Besar SFT STEM Nasional</span>
+        </div>
+        <div class="stat-item">
+            <span class="number">HKI</span>
+            <span class="label">Karya Terdaftar</span>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-logo">
+            <img src="assets/gambar/logo.png" alt="AcademiGo Logo">
+        </div>
+
+        <p class="footer-tagline">
+            Menjadikan teknologi sebagai jembatan untuk mengubah setiap tantangan menjadi peluang yang inovatif.
+        </p>
+
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="projek.html">Project</a></li>
+                <li><a href="praktek.html">Praktikum</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-social">
+            <a href="https://www.instagram.com/helmiiiae" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/helmi-rifqi-nasrullah-sukaton" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/helmirifqiii" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Helmi Rifqi | Dirancang dengan bangga untuk masa depan pendidikan.</p>
+        </div>
+    </div>
+</footer>
+<div id="kibo-container">
+    <div id="chat-window" style="display: none; flex-direction: column;">
+        <div id="chat-header">
+            <span><i class="fas fa-robot"></i> Kibo AI</span>
+            <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-output"></div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Tanya Kibo apa saja..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button id="chat-toggle-btn" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

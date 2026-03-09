@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab TKJ - Simulasi Perakitan PC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_assembly.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">AcademiGo | Interactive Linux Terminal</div>
+        <nav><a href="praktikum.html" class="btn-back">Kembali</a></nav>
+    </header>
+
+    <main class="container">
+        <div id="game-wrapper">
+            <header class="game-header">
+                <h1>⚙️ Simulasi Rakit PC</h1>
+                <p>Tarik komponen dari gudang dan pasang ke slot yang tepat pada Motherboard!</p>
+            </header>
+
+            <div class="assembly-area">
+                <div id="motherboard">
+                    <div class="drop-zone" id="socket-cpu" data-accept="cpu">Slot CPU</div>
+                    <div class="drop-zone" id="slot-ram" data-accept="ram">Slot RAM</div>
+                    <div class="drop-zone" id="slot-gpu" data-accept="gpu">Slot PCI-E (GPU)</div>
+                    <div class="drop-zone" id="slot-psu" data-accept="psu">Area PSU</div>
+                </div>
+
+                <div id="gudang-komponen">
+                    <h3>Gudang Komponen</h3>
+                    <div class="component-list">
+                        <div class="component" draggable="true" id="cpu" data-type="cpu">📦 Processor</div>
+                        <div class="component" draggable="true" id="ram" data-type="ram">💾 RAM Card</div>
+                        <div class="component" draggable="true" id="gpu" data-type="gpu">🎮 Graphics Card</div>
+                        <div class="component" draggable="true" id="psu" data-type="psu">🔌 Power Supply</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="status-msg">Silakan mulai merakit...</div>
+            <button id="reset-btn" onclick="location.reload()">Reset Rakitan</button>
+        </div>
+    </main>
+
+    <script src="script_assembly.js"></script>
+</body>
+</html>

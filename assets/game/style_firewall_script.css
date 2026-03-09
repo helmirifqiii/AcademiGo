@@ -1,0 +1,20 @@
+:root {
+    --bg-dark: #1a1a1a;
+    --text-green: #00ff41;
+    --text-red: #ff4b2b;
+}
+
+body { font-family: 'Poppins', sans-serif; background: #f0f2f5; margin: 0; }
+.navbar { background: #0F2854; padding: 15px 5%; color: white; display: flex; justify-content: space-between; }
+.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+
+.terminal-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+#traffic-monitor { background: #000; height: 350px; border-radius: 8px; color: var(--text-green); font-family: 'Fira Code', monospace; font-size: 12px; padding: 15px; overflow-y: auto; }
+#terminal { background: #1e1e1e; height: 350px; border-radius: 8px; color: #fff; padding: 15px; font-family: 'Fira Code', monospace; }
+
+#terminal-output { height: 280px; overflow-y: auto; margin-bottom: 10px; }
+.input-line { display: flex; gap: 5px; }
+input { background: transparent; border: none; color: #fff; outline: none; width: 100%; font-family: 'Fira Code'; }
+.log-entry { margin-bottom: 3px; }
+.danger-log { color: var(--text-red); font-weight: bold; }
