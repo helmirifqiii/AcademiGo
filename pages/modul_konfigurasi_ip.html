@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademiGo | Praktikum Setting IP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../assets/gambar/logotitle.png">
+    <link rel="stylesheet" href="../css/style_konfigurasi.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AcademiGo">
+            AcademiGo <span>|</span> Subnetting
+        </a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <a class="back-link" href="../praktek.html" aria-label="Kembali">
+                <i class="fa-solid fa-arrow-left"></i>
+                Kembali
+            </a>
+        </div>
+    </header>
+
+    <main class="lab-shell">
+        <section class="task-panel">
+            <div>
+                <p class="eyebrow">Virtual Lab TKJ</p>
+                <h1>Simulasi Setting IP 2 Laptop Melalui Switch</h1>
+                <p class="intro">
+                    Siswa belajar alur praktik Windows dari awal: membuka Run, masuk Network Connections,
+                    mengatur IPv4, mematikan firewall sementara, lalu menguji koneksi dengan ping.
+                </p>
+            </div>
+
+            <div class="task-card">
+                <div class="task-card__head">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <h2>Tujuan Eksplorasi</h2>
+                </div>
+                <ul>
+                    <li>Hubungkan Laptop A dan Laptop B ke switch memakai kabel LAN.</li>
+                    <li>Atur IP Address secara manual di masing-masing laptop.</li>
+                    <li>Gunakan IP bebas agar siswa bisa mencoba, salah, memperbaiki, dan memahami hasil ping.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="workspace" aria-label="Area simulasi jaringan">
+            <aside class="tool-panel">
+                <div class="panel-block">
+                    <h2>Pilih Laptop</h2>
+                    <div class="device-picker" role="tablist" aria-label="Pilih laptop">
+                        <button class="device-tab active" data-pc="pc1" type="button" role="tab" aria-selected="true">
+                            <i class="fa-solid fa-laptop"></i>
+                            Laptop A
+                        </button>
+                        <button class="device-tab" data-pc="pc2" type="button" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-laptop"></i>
+                            Laptop B
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-block step-guide">
+                    <div class="panel-title-row">
+                        <h2 id="guideTitle">Langkah Laptop A</h2>
+                        <span class="pill" id="guideStep">1/14</span>
+                    </div>
+                    <p id="guideText"></p>
+                    <div class="guide-actions">
+                        <button class="ghost-btn" id="prevStep" type="button">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Sebelumnya
+                        </button>
+                        <button class="primary-btn" id="nextStep" type="button">
+                            Lanjut
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-block">
+                    <h2>Kabel LAN</h2>
+                    <div class="cable-actions">
+                        <label class="toggle-row">
+                            <input id="pc1Cable" type="checkbox" checked>
+                            <span>Laptop A ke Switch</span>
+                        </label>
+                        <label class="toggle-row">
+                            <input id="pc2Cable" type="checkbox" checked>
+                            <span>Laptop B ke Switch</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="panel-block checklist">
+                    <h2>Progress Praktik</h2>
+                    <ol>
+                        <li id="stepCable"><span></span> Kabel kedua laptop terhubung</li>
+                        <li id="stepIpA"><span></span> Laptop A sudah punya IP</li>
+                        <li id="stepIpB"><span></span> Laptop B sudah punya IP</li>
+                        <li id="stepFirewall"><span></span> Firewall kedua laptop off</li>
+                        <li id="stepPing"><span></span> Ping berhasil</li>
+                    </ol>
+                </div>
+            </aside>
+
+            <section class="simulation-area">
+                <div class="topology">
+                    <article class="laptop laptop-pc1" data-pc-card="pc1">
+                        <div class="laptop-screen">
+                            <div class="os-bar">
+                                <span>Laptop A</span>
+                                <button class="open-app" data-app="cmd" data-pc="pc1" type="button" title="Buka Command Prompt">
+                                    <i class="fa-solid fa-terminal"></i>
+                                </button>
+                            </div>
+                            <div class="desktop">
+                                <button class="desktop-icon open-run" data-pc="pc1" type="button">
+                                    <i class="fa-brands fa-windows"></i>
+                                    Win + R
+                                </button>
+                                <button class="desktop-icon open-app" data-app="cmd" data-pc="pc1" type="button">
+                                    <i class="fa-solid fa-terminal"></i>
+                                    CMD
+                                </button>
+                                <div class="desktop-info" id="pc1Info">IP belum diatur</div>
+                            </div>
+                        </div>
+                        <div class="keyboard"></div>
+                    </article>
+
+                    <div class="switch-wrap">
+                        <div class="cable cable-left active" id="cableLeft"></div>
+                        <div class="network-switch">
+                            <div class="switch-title">
+                                <i class="fa-solid fa-network-wired"></i>
+                                Switch
+                            </div>
+                            <div class="ports">
+                                <span id="port1" class="port active"></span>
+                                <span id="port2" class="port active"></span>
+                                <span class="port"></span>
+                                <span class="port"></span>
+                            </div>
+                        </div>
+                        <div class="cable cable-right active" id="cableRight"></div>
+                    </div>
+
+                    <article class="laptop laptop-pc2" data-pc-card="pc2">
+                        <div class="laptop-screen">
+                            <div class="os-bar">
+                                <span>Laptop B</span>
+                                <button class="open-app" data-app="cmd" data-pc="pc2" type="button" title="Buka Command Prompt">
+                                    <i class="fa-solid fa-terminal"></i>
+                                </button>
+                            </div>
+                            <div class="desktop">
+                                <button class="desktop-icon open-run" data-pc="pc2" type="button">
+                                    <i class="fa-brands fa-windows"></i>
+                                    Win + R
+                                </button>
+                                <button class="desktop-icon open-app" data-app="cmd" data-pc="pc2" type="button">
+                                    <i class="fa-solid fa-terminal"></i>
+                                    CMD
+                                </button>
+                                <div class="desktop-info" id="pc2Info">IP belum diatur</div>
+                            </div>
+                        </div>
+                        <div class="keyboard"></div>
+                    </article>
+                </div>
+
+                <div class="status-strip" id="networkStatus">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Ikuti langkah di panel kiri, atau klik Win + R pada laptop untuk mulai praktik.
+                </div>
+
+                <section class="windows-panel" id="windowsPanel" aria-live="polite">
+                    <div class="window-top">
+                        <strong id="windowTitle">Run</strong>
+                        <button id="closeWindow" type="button" aria-label="Tutup jendela">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="window-body" id="windowBody"></div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <script src="../js/script_konfigurasi.js"></script>
+</body>
+</html>

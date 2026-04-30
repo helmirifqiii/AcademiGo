@@ -1018,13 +1018,13 @@ body.dark-mode .info-card {
         bottom: 15px;
         right: 15px;
     }
-
     #chat-window {
-        width: calc(100vw - 40px); /* Melebar sesuai layar HP */
-        height: 70vh; /* Tinggi 70% dari layar HP */
-        max-width: 320px;
+        /* Gunakan 90vw agar ada margin kanan-kiri yang pas */
+        width: 90vw; 
+        height: 70vh; 
+        max-width: 350px;
+        right: 0;
     }
-
     #chat-toggle-btn {
         width: 55px;
         height: 55px;
@@ -1114,9 +1114,9 @@ body.dark-mode .info-card {
 /* Input Area */
 #chat-input-area {
     display: flex;
-    padding: 15px;
+    padding: 10px;
     background: var(--card-bg);
-    gap: 10px;
+    gap: 5px;
     border-top: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -1124,12 +1124,14 @@ body.dark-mode .info-card {
     flex: 1;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 12px;
-    padding: 12px 15px;
+    padding: 10px 15px;
     outline: none;
     background: var(--light);
     color: var(--text-main);
     font-family: inherit;
     transition: 0.3s;
+    font-size: 14px;
+    min-width: 0;
 }
 
 #user-input:focus {
@@ -1141,11 +1143,15 @@ body.dark-mode .info-card {
     background: var(--primary);
     color: white;
     border: none;
-    padding: 0 20px;
+    padding: 0 15px;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 13px;
+}
+#chat-window * {
+    box-sizing: border-box;
 }
 
 #chat-input-area button:hover {

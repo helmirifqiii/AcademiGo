@@ -136,19 +136,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // --- 7. LOGIKA LENGKAP CHATBOT KIBO ---
-const API_KEY = "AIzaSyDkcfTQ22JVNR4jkw4PQrw1vmLXTGySNKo";
+   // --- 7. LOGIKA LENGKAP CHATBOT KIBO ---
+const API_KEY = "AIzaSyAbSvHgAN8hMeGE4rjw6WkR9zrbZw2480c";
+let isFirstTime = true; // Penanda untuk sapaan pertama
 
 // Fungsi untuk menampilkan pesan ke UI
 function appendMessage(text, className) {
     const chatOutput = document.getElementById('chat-output');
+    if (!chatOutput) return null;
+
     const msgDiv = document.createElement('div');
     msgDiv.className = `msg ${className}`;
-    msgDiv.innerText = text;
-    if (chatOutput) {
-        chatOutput.appendChild(msgDiv);
-        chatOutput.scrollTop = chatOutput.scrollHeight;
-    }
+    
+    // PERBAIKAN: Mengubah Markdown **bold** menjadi tag <b> HTML
+    let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    msgDiv.innerHTML = formattedText;
+
+    chatOutput.appendChild(msgDiv);
+    chatOutput.scrollTop = chatOutput.scrollHeight;
+    
     return msgDiv;
 }
 
@@ -156,9 +162,21 @@ function appendMessage(text, className) {
 window.toggleChat = function() {
     const chatWin = document.getElementById('chat-window');
     if (chatWin) {
-        // Cek display saat ini, jika flex maka sembunyikan, jika tidak maka tampilkan
-        const isFlex = chatWin.style.display === 'flex';
-        chatWin.style.display = isFlex ? 'none' : 'flex';
+        const isCurrentlyHidden = chatWin.style.display === 'none' || chatWin.style.display === '';
+        
+        if (isCurrentlyHidden) {
+            chatWin.style.display = 'flex';
+            
+            // TAMBAHAN: Sapaan otomatis saat pertama kali dibuka
+            if (isFirstTime) {
+                setTimeout(() => {
+                    appendMessage("Halo! Aku **Kibo**, asisten AI AcademiGo. Ada yang bisa aku bantu hari ini?", "kibo-msg");
+                }, 500); // Delay sedikit agar terlihat lebih natural
+                isFirstTime = false;
+            }
+        } else {
+            chatWin.style.display = 'none';
+        }
     }
 };
 
@@ -172,7 +190,6 @@ window.sendMessage = async function() {
     const inputField = document.getElementById('user-input');
     const message = inputField.value.trim();
     
-    // Validasi input kosong
     if (!message) return;
 
     // 1. Tampilkan pesan user di chat
@@ -183,8 +200,7 @@ window.sendMessage = async function() {
     const loadingMsg = appendMessage('Kibo sedang berpikir...', 'kibo-msg');
 
     try {
-        // Memanggil Google Gemini API 1.5 Flash (Versi stabil)
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -205,7 +221,6 @@ window.sendMessage = async function() {
             })
         });
 
-        // 3. Penanganan Limit API (Error 429)
         if (response.status === 429) {
             loadingMsg.innerText = "yahhhh maaf kibo sedang istirahat coba lagi besok yah best!! Love you!!";
             return;
@@ -213,17 +228,16 @@ window.sendMessage = async function() {
 
         const data = await response.json();
         
-        // 4. Tampilkan jawaban dari AI
         if (data.candidates && data.candidates[0].content.parts[0].text) {
             const botResponse = data.candidates[0].content.parts[0].text;
-            loadingMsg.remove(); // Hapus tulisan loading
+            loadingMsg.remove(); // Hapus status loading
+            
             appendMessage(botResponse, 'kibo-msg');
         } else {
             throw new Error("Respons tidak valid");
         }
         
     } catch (error) {
-        // 5. Penanganan error umum atau koneksi terputus
         loadingMsg.innerText = "yahhhh maaf kibo sedang istirahat coba lagi besok yah best!! Love you!!";
         console.error("Chatbot Error:", error);
     }
